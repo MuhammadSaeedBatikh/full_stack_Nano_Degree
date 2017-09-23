@@ -24,7 +24,7 @@ class Movie(VisualMedia):
         self.rating = rating
 
 
-class TVShow(VisualMedia):
+class TVSeries(VisualMedia):
     RATINGS = ['TV-Y', 'TV-Y7', 'TV-G', 'TV-PG', 'TV-14', 'TV-MA']
 
     def __init__(self, title, story_line, youtube_trailer_url, poster_image_url,

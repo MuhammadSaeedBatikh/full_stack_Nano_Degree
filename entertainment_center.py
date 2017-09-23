@@ -4,12 +4,14 @@ from media import *
 
 def main():
     movies = create_movies_list()
-    series = create_tvShows_list()
+    series = create_tvshows_list()
+
     movies = movies+series
     fresh_tomatoes.open_movies_page(movies)
 
 
 def create_movies_list():
+
     godfather = Movie('The Godfather',
                       '''\
                        The aging patriarch of an organized crime dynasty
@@ -112,42 +114,44 @@ def create_movies_list():
               king_sp, amadeus, c_kane, clockwork, godfather,schindler]
     return movies
 
-def create_tvShows_list():
-    breaking_bad = TVShow('Breaking Bad', '''\
+
+def create_tvshows_list():
+
+    breaking_bad = TVSeries('Breaking Bad', '''\
                                    A high school chemistry teacher diagnosed with lung cancer turns to cocking
                                     meth in order to secure his family's future.''',
                           'https://www.youtube.com/watch?v=HhesaQXLuRY',
                           'https://images-na.ssl-images-amazon.com/images/M/MV5BZDNhNzhkNDctOTlmOS00NWNmLWEyODQtNWMxM2UzYmJiNGMyXkEyXkFqcGdeQXVyNTMxMjgxMzA@._V1_.jpg',
-                          '(2008 2013)', 'Crime, Drama, Thriller', '5', rating=TVShow.RATINGS[4])
+                          '(2008 2013)', 'Crime, Drama, Thriller', '5', rating=TVSeries.RATINGS[4])
 
-    rick_morty = TVShow('Rick And Morty', '''\
+    rick_morty = TVSeries('Rick And Morty', '''\
                                An animated series that follows the exploits of a super scientist and his not-so-bright grandson.
                                ''',
                         'https://www.youtube.com/watch?v=WNhH00OIPP0',
                         'https://images-na.ssl-images-amazon.com/images/M/MV5BMTQxNDEwNTE0Nl5BMl5BanBnXkFtZTgwMzQ1MTg3MDE@._V1_.jpg',
-                        '(2013 )', 'Animation, Adventure, Comedy', '3', rating=TVShow.RATINGS[4])
+                        '(2013 )', 'Animation, Adventure, Comedy', '3', rating=TVSeries.RATINGS[4])
 
-    sopranos = TVShow('The Sopranos', '''\
+    sopranos = TVSeries('The Sopranos', '''\
                                New Jersey mob boss, Tony Soprano, deals with personal and professional issues in his home and business life.
                                ''',
                       'https://www.youtube.com/watch?v=wrN2k3qGbVA',
                       'https://images-na.ssl-images-amazon.com/images/M/MV5BZGJjYzhjYTYtMDBjYy00OWU1LTg5OTYtNmYwOTZmZjE3ZDdhXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SY1000_CR0,0,702,1000_AL_.jpg',
-                      '(1999)', 'Crime, Drama', '6', rating=TVShow.RATINGS[5])
+                      '(1999)', 'Crime, Drama', '6', rating=TVSeries.RATINGS[5])
 
-    tw_zone = TVShow('The Twilight Zone ', '''\
+    tw_zone = TVSeries('The Twilight Zone ', '''\
                                Ordinary people find themselves in extraordinarily astounding situations,
                                which they each try to solve in a remarkable manner.
                                ''',
                      'https://www.youtube.com/watch?v=jDrjfDRM5rE',
                      'https://images-na.ssl-images-amazon.com/images/M/MV5BMjAwMTQ1MjE3N15BMl5BanBnXkFtZTYwOTA5OTg4._V1._CR10,9,236,390_.jpg',
-                     '(1959 1964)', 'Fantasy, Horror, Mystery', '5', rating=TVShow.RATINGS[3])
+                     '(1959 1964)', 'Fantasy, Horror, Mystery', '5', rating=TVSeries.RATINGS[3])
 
-    monty_python = TVShow('Monty Python\'s Flying Circus ', '''\
+    monty_python = TVSeries('Monty Python\'s Flying Circus ', '''\
                                The original surreal sketch comedy showcase for the Monty Python troupe.
                                ''',
                           'https://www.youtube.com/watch?v=xJNeRCiq75M',
                           'https://images-na.ssl-images-amazon.com/images/M/MV5BNzY1MDE5OTY4Ml5BMl5BanBnXkFtZTgwOTAyNTQ1NjE@._V1_.jpg',
-                          '(1969 1974)', 'Comedy', '4', rating=TVShow.RATINGS[4])
+                          '(1969 1974)', 'Comedy', '4', rating=TVSeries.RATINGS[4])
 
     series = [monty_python, breaking_bad,tw_zone,rick_morty,sopranos]
     return series

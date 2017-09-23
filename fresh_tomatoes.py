@@ -18,8 +18,13 @@ main_page_head = '''
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <style type="text/css" media="screen">
+        html *
+             {
+                color:white !important;
+              }
         body {
             padding-top: 80px;
+            background-color:black;
         }
         #trailer .modal-dialog {
             margin-top: 200px;
@@ -41,7 +46,7 @@ main_page_head = '''
             padding-top: 20px;
         }
         .movie-tile:hover {
-            background-color: #EEE;
+            background-color: #353535;
             cursor: pointer;
         }
         .scale-media {
@@ -144,7 +149,7 @@ def create_movie_tiles_content(movies):
 
         trailer_youtube_id = (youtube_id_match.group(0) if youtube_id_match
                               else None)
-        if isinstance(movie, media.TVShow):
+        if isinstance(movie, media.TVSeries):
             info = 'Seasons: '+movie.seasons_number
             release_date= movie.running_date
         else:
