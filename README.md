@@ -3,5 +3,5 @@
 
 <div>
 1- download project<br>
-2- run the <strong>"main"</strong> module and it should generate a nice html page and open it in your web browser
+2- run the <strong>"main.py"</strong> module and it should generate a nice html page and open it in your web browser
 </div>
