@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Muhammad Saeed</title>
+
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <style type="text/css" media="screen">
+        body {
+            padding-top: 80px;
+        }
+        #trailer .modal-dialog {
+            margin-top: 200px;
+            width: 640px;
+            height: 480px;
+        }
+        .hanging-close {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            z-index: 9001;
+        }
+        #trailer-video {
+            width: 100%;
+            height: 100%;
+        }
+        .movie-tile {
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+        .movie-tile:hover {
+            background-color: #EEE;
+            cursor: pointer;
+        }
+        .scale-media {
+            padding-bottom: 56.25%;
+            position: relative;
+        }
+        .scale-media iframe {
+            border: none;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background-color: white;
+        }
+    </style>
+    <script type="text/javascript" charset="utf-8">
+        // Pause the video when the modal is closed
+        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
+            // Remove the src so the player itself gets removed, as this is the only
+            // reliable way to ensure the video stops playing in IE
+            $("#trailer-video-container").empty();
+        });
+        // Start playing the video whenever the trailer modal is opened
+        $(document).on('click', '.movie-tile', function (event) {
+            var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+            $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+              'id': 'trailer-video',
+              'type': 'text-html',
+              'src': sourceUrl,
+              'frameborder': 0
+            }));
+        });
+        // Animate in the movies when the page loads
+        $(document).ready(function () {
+          $('.movie-tile').hide().first().show("fast", function showNext() {
+            $(this).next("div").show("fast", showNext);
+          });
+        });
+    </script>
+</head>
+
+  <body>
+    <!-- Trailer Video Modal -->
+    <div class="modal" id="trailer">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
+            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+          </a>
+          <div class="scale-media" id="trailer-video-container">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Page Content -->
+    <div class="container">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Muhammad Saeed Movie Trailers</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="oiXdPolca5w" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BYTViNjMyNmUtNDFkNC00ZDRlLThmMDUtZDU2YWE4NGI2ZjVmXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY1000_CR0,0,670,1000_AL_.jpg" width="220" height="342">
+    <h2><strong>The Usual Suspects</strong></h2>
+    <h3><strong>R</strong>&nbsp|&nbsp<strong>1h 46min</strong>&nbsp|&nbsp<strong>Crime, Drama, Mystery</strong>
+    <br><strong>15 September 1995 (USA)</strong><br></h3>
+    <h4>                               A sole survivor tells of the twisty events leading up to a horrific gun battle on a boat.
+                               </h4>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="aS_d0Ayjw4o" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMzcwYWFkYzktZjAzNC00OGY1LWI4YTgtNzc5MzVjMDVmNjY0XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SY1000_CR0,0,673,1000_AL_.jpg" width="220" height="342">
+    <h2><strong>A Beautiful Mind</strong></h2>
+    <h3><strong>PG-13</strong>&nbsp|&nbsp<strong>2h 15min</strong>&nbsp|&nbsp<strong> Biography, Drama</strong>
+    <br><strong>4 January 2002 (USA)</strong><br></h3>
+    <h4>                                         After John Nash, a brilliant but asocial mathematician,
+                                         accepts secret work in cryptography, his life takes a turn for the nightmarish.</h4>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="4lj185DaZ_o" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BOGYwYWNjMzgtNGU4ZC00NWQ2LWEwZjUtMzE1Zjc3NjY3YTU1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SY1000_CR0,0,677,1000_AL_.jpg" width="220" height="342">
+    <h2><strong>Dead Poets Society</strong></h2>
+    <h3><strong>PG-13</strong>&nbsp|&nbsp<strong>2h 8min</strong>&nbsp|&nbsp<strong>Comedy, Drama</strong>
+    <br><strong>9 June 1989 (USA)</strong><br></h3>
+    <h4>                                English teacher John Keating inspires his students to look at poetry with
+                                 a different perspective of authentic knowledge and feelings.</h4>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="ni4tEtuTccc" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTA2NDYxOGYtYjU1Mi00Y2QzLTgxMTQtMWI1MGI0ZGQ5MmU4XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SY1000_SX684_AL_.jpg" width="220" height="342">
+    <h2><strong>Snatch</strong></h2>
+    <h3><strong>R</strong>&nbsp|&nbsp<strong>1h 42min</strong>&nbsp|&nbsp<strong>Comedy, Crime</strong>
+    <br><strong>19 January 2001 (USA)</strong><br></h3>
+    <h4>                                the story of boxing promoters, bookmakers, a Russian gangster, incompetent amateur robbers,
+                                and Jewish jewelers.
+                               </h4>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="W7NktJhrRYQ" data-toggle="modal" data-target="#trailer">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYSMiwLB3Bdc2TG5PC2Gacv3CEFMlH2UeZtDvESUonATbBdm0J" width="220" height="342">
+    <h2><strong>Mystic River</strong></h2>
+    <h3><strong>R</strong>&nbsp|&nbsp<strong>2h 18min</strong>&nbsp|&nbsp<strong>Drama, Mystery</strong>
+    <br><strong> 15 October 2003 (USA)</strong><br></h3>
+    <h4>                         three men are reunited by circumstance when one has a family tragedy</h4>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="x9f6JaaX7Wg" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BNzc2ZThkOGItZGY5YS00MDYwLTkyOTAtNDRmZWIwMGRhYTc0L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY1000_CR0,0,656,1000_AL_.jpg" width="220" height="342">
+    <h2><strong>Full Metal Jacket</strong></h2>
+    <h3><strong>R</strong>&nbsp|&nbsp<strong>1h 56min</strong>&nbsp|&nbsp<strong>Drama, War</strong>
+    <br><strong>10 July 1987 (USA)</strong><br></h3>
+    <h4>                            A pragmatic U.S. Marine observes the dehumanizing effects the Vietnam War has on his fellow recruits.
+                               </h4>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="s7EdQ4FqbhY" data-toggle="modal" data-target="#trailer">
+    <img src="https://ih0.redbubble.net/image.57066806.8556/flat,800x800,075,f.u4.jpg" width="220" height="342">
+    <h2><strong>Pulp Fiction</strong></h2>
+    <h3><strong>R</strong>&nbsp|&nbsp<strong>2h 34min</strong>&nbsp|&nbsp<strong> Crime, Drama</strong>
+    <br><strong>14 October 1994 (USA)</strong><br></h3>
+    <h4>                        Two mob hit men, a boxer,
+                        a gangster's wife, and a pair of bandits intertwine in four tales of violence and redemption.</h4>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="kYoSQkfrjfA" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMzU5MjEwMTg2Nl5BMl5BanBnXkFtZTcwNzM3MTYxNA@@._V1_SY1000_CR0,0,684,1000_AL_.jpg" width="220" height="342">
+    <h2><strong>The King's Speech</strong></h2>
+    <h3><strong>R</strong>&nbsp|&nbsp<strong> 1h 58min</strong>&nbsp|&nbsp<strong>Biography, Drama</strong>
+    <br><strong>25 December 2010 (USA)</strong><br></h3>
+    <h4>                    The story of King George VI of the United Kingdom of Great Britain and Northern Ireland.</h4>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="r7kWQj9FCGY" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTg5NDkwMTk5N15BMl5BanBnXkFtZTYwODg3MDk2._V1_.jpg" width="220" height="342">
+    <h2><strong>Amadeus</strong></h2>
+    <h3><strong>PG-13</strong>&nbsp|&nbsp<strong>2h 40min</strong>&nbsp|&nbsp<strong>Biography, Drama, History</strong>
+    <br><strong>19 September 1984</strong><br></h3>
+    <h4>                               The incredible story of Wolfgang Amadeus Mozart,
+                                told by his peer and secret rival Antonio Salieri.
+                               </h4>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="8dxh3lwdOFw" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ2Mjc1MDQwMl5BMl5BanBnXkFtZTcwNzUyOTUyMg@@._V1_.jpg" width="220" height="342">
+    <h2><strong>Citizen Kane</strong></h2>
+    <h3><strong>PG-13</strong>&nbsp|&nbsp<strong>1h 59min</strong>&nbsp|&nbsp<strong>Drama</strong>
+    <br><strong>5 September 1941 (USA)</strong><br></h3>
+    <h4>                               Following the death of a publishing tycoon,
+                                news reporters scramble to discover the meaning of his final utterance.
+                               </h4>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="SPRzm8ibDQ8" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTY3MjM1Mzc4N15BMl5BanBnXkFtZTgwODM0NzAxMDE@._V1_SY1000_CR0,0,675,1000_AL_.jpg" width="220" height="342">
+    <h2><strong>A Clockwork Orange</strong></h2>
+    <h3><strong>R</strong>&nbsp|&nbsp<strong>2h 16min</strong>&nbsp|&nbsp<strong>Crime, Drama</strong>
+    <br><strong>2 February 1972 (USA)</strong><br></h3>
+    <h4>                                a sadistic gang leader is imprisoned and volunteers for a conduct-aversion experiment,
+                                but it doesn't go as planned.
+                               </h4>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="sY1S34973zA" data-toggle="modal" data-target="#trailer">
+    <img src="http://img.zanda.com/item/57040290000061/730xauto/The_Godfather.jpg" width="220" height="342">
+    <h2><strong>The Godfather</strong></h2>
+    <h3><strong>R</strong>&nbsp|&nbsp<strong> 2h 55min</strong>&nbsp|&nbsp<strong>Crime, Drama</strong>
+    <br><strong>24 March 1972 (USA)</strong><br></h3>
+    <h4>                       The aging patriarch of an organized crime dynasty
+                       transfers control of his clandestine empire to his reluctant son.</h4>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="gG22XNhtnoY" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BNDE4OTMxMTctNmRhYy00NWE2LTg3YzItYTk3M2UwOTU5Njg4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY1000_CR0,0,666,1000_AL_.jpg" width="220" height="342">
+    <h2><strong>Schindler's List</strong></h2>
+    <h3><strong>R</strong>&nbsp|&nbsp<strong>3h 15min</strong>&nbsp|&nbsp<strong> Biography, Drama, History</strong>
+    <br><strong>4 February 1994 (USA)</strong><br></h3>
+    <h4>                             Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their
+                              persecution by the Nazi</h4>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="xJNeRCiq75M" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BNzY1MDE5OTY4Ml5BMl5BanBnXkFtZTgwOTAyNTQ1NjE@._V1_.jpg" width="220" height="342">
+    <h2><strong>Monty Python's Flying Circus </strong></h2>
+    <h3><strong>TV-14</strong>&nbsp|&nbsp<strong>Seasons: 4</strong>&nbsp|&nbsp<strong>Comedy</strong>
+    <br><strong>(1969 1974)</strong><br></h3>
+    <h4>                               The original surreal sketch comedy showcase for the Monty Python troupe.
+                               </h4>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="HhesaQXLuRY" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BZDNhNzhkNDctOTlmOS00NWNmLWEyODQtNWMxM2UzYmJiNGMyXkEyXkFqcGdeQXVyNTMxMjgxMzA@._V1_.jpg" width="220" height="342">
+    <h2><strong>Breaking Bad</strong></h2>
+    <h3><strong>TV-14</strong>&nbsp|&nbsp<strong>Seasons: 5</strong>&nbsp|&nbsp<strong>Crime, Drama, Thriller</strong>
+    <br><strong>(2008 2013)</strong><br></h3>
+    <h4>                                   A high school chemistry teacher diagnosed with lung cancer turns to cocking
+                                    meth in order to secure his family's future.</h4>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="jDrjfDRM5rE" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjAwMTQ1MjE3N15BMl5BanBnXkFtZTYwOTA5OTg4._V1._CR10,9,236,390_.jpg" width="220" height="342">
+    <h2><strong>The Twilight Zone </strong></h2>
+    <h3><strong>TV-PG</strong>&nbsp|&nbsp<strong>Seasons: 5</strong>&nbsp|&nbsp<strong>Fantasy, Horror, Mystery</strong>
+    <br><strong>(1959 1964)</strong><br></h3>
+    <h4>                               Ordinary people find themselves in extraordinarily astounding situations,
+                               which they each try to solve in a remarkable manner.
+                               </h4>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="WNhH00OIPP0" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTQxNDEwNTE0Nl5BMl5BanBnXkFtZTgwMzQ1MTg3MDE@._V1_.jpg" width="220" height="342">
+    <h2><strong>Rick And Morty</strong></h2>
+    <h3><strong>TV-14</strong>&nbsp|&nbsp<strong>Seasons: 3</strong>&nbsp|&nbsp<strong>Animation, Adventure, Comedy</strong>
+    <br><strong>(2013 )</strong><br></h3>
+    <h4>                               An animated series that follows the exploits of a super scientist and his not-so-bright grandson.
+                               </h4>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="wrN2k3qGbVA" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BZGJjYzhjYTYtMDBjYy00OWU1LTg5OTYtNmYwOTZmZjE3ZDdhXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SY1000_CR0,0,702,1000_AL_.jpg" width="220" height="342">
+    <h2><strong>The Sopranos</strong></h2>
+    <h3><strong>TV-MA</strong>&nbsp|&nbsp<strong>Seasons: 6</strong>&nbsp|&nbsp<strong>Crime, Drama</strong>
+    <br><strong>(1999)</strong><br></h3>
+    <h4>                               New Jersey mob boss, Tony Soprano, deals with personal and professional issues in his home and business life.
+                               </h4>
+</div>
+
+    </div>
+  </body>
+</html>
