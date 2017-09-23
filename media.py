@@ -1,9 +1,5 @@
-from abc import ABC, abstractmethod
+class VisualMedia():
 
-
-class VisualMedia(ABC):
-
-    @abstractmethod
     def __init__(self, title, story_line, youtube_trailer_url,
                  poster_image_url, genre):
         self.title = title
