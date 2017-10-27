@@ -1,4 +1,4 @@
-class VisualMedia():
+class VisualMedia:
     """this class is a super class that holds common 
     fields/functionality of Movies, TVSeries or whatever to be added later and considered to
     be some sort of a Visual media"""
